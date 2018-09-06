@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninja Class One</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            function Ninja(name, health){
+                this.name = name;
+                this.health = 100;
+                var strength = 3;
+                var speed = 3;
+
+                this.sayName = function() {
+                    console.log("My name is " + this.name);
+                }
+
+                this.showStats = function() {
+                    console.log("Name: " + this.name + ", " + "Health: " + this.health +  ", " + "Speed: " + speed +  ", " + "Strength " + speed);
+                }
+
+                this.drinkSake = function(){
+                    this.health += 10;
+                    console.log("Adding health");
+                }
+
+                this.punch = function(ninjaHurt){
+                    ninjaHurt.health -= 5;
+                    console.log(this.name + " is punching somebody")
+                }
+
+                this.kick = function(ninjaHurt) {
+                    ninjaHurt.health -= 15;
+                    console.log(this.name + " is taking 15 health from " + ninjaHurt.name)
+                }
+            }
+
+            var ninja1 = new Ninja("TMNT");
+            var ninja2 = new Ninja("Tommy");
+            ninja1.sayName();
+            ninja1.drinkSake();
+            ninja1.showStats();
+            ninja1.punch(ninja2);
+            ninja1.kick(ninja2);
+            ninja2.showStats();
+        })
+    
+    </script>
+</head>
+<body>
+    <h3>Ninja Class Two</h3>
+</body>
+</html>
